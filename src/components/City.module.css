@@ -11,6 +11,10 @@
   gap: 2rem;
 }
 
+.city::-webkit-scrollbar {
+  display: none;
+}
+
 .row {
   display: flex;
   flex-direction: column;
