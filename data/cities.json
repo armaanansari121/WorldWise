@@ -1,40 +1,112 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
+      "cityName": "Meerut",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-03-22T09:43:40.218Z",
       "notes": "",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
+        "lat": "29.022997409327356",
+        "lng": "77.69523201867932"
       },
-      "id": 17806751
+      "id": 98443201
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "cityName": "Nagpur",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-03-22T09:38:08.129Z",
+      "notes": "",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
+        "lat": "21.16714026237362",
+        "lng": "79.06704840881548"
       },
-      "id": 98443197
+      "id": 98443200
+    },
+    {
+      "cityName": "Riyadh",
+      "country": "Saudi Arabia",
+      "emoji": "🇸🇦",
+      "date": "2024-03-22T09:44:01.908Z",
+      "notes": "",
+      "position": {
+        "lat": "24.712815163992023",
+        "lng": "46.6757269147764"
+      },
+      "id": 98443202
+    },
+    {
+      "cityName": "Medina",
+      "country": "Saudi Arabia",
+      "emoji": "🇸🇦",
+      "date": "2024-03-22T09:44:39.103Z",
+      "notes": "",
+      "position": {
+        "lat": "24.88781003791885",
+        "lng": "39.13222077384973"
+      },
+      "id": 98443203
+    },
+    {
+      "cityName": "Al Quway‘iyah",
+      "country": "Saudi Arabia",
+      "emoji": "🇸🇦",
+      "date": "2024-03-22T09:47:33.260Z",
+      "notes": "",
+      "position": {
+        "lat": "24.359102476296574",
+        "lng": "45.851358650280986"
+      },
+      "id": 98443204
+    },
+    {
+      "cityName": "Pune",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-03-22T11:24:48.044Z",
+      "notes": "",
+      "position": {
+        "lat": "18.545293233152794",
+        "lng": "73.85268333785059"
+      },
+      "id": 98443205
+    },
+    {
+      "cityName": "Delhi",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-03-22T11:25:16.351Z",
+      "notes": "",
+      "position": {
+        "lat": "28.612910190449078",
+        "lng": "77.20442503020818"
+      },
+      "id": 98443206
+    },
+    {
+      "cityName": "Dehra Dun",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-03-22T11:26:15.162Z",
+      "notes": "",
+      "position": {
+        "lat": "30.335098143147253",
+        "lng": "78.03639162816523"
+      },
+      "id": 98443208
+    },
+    {
+      "cityName": "An Nabhaniyah",
+      "country": "Saudi Arabia",
+      "emoji": "🇸🇦",
+      "date": "2024-03-22T16:35:33.498Z",
+      "notes": "",
+      "position": {
+        "lat": "25.506568109301018",
+        "lng": "42.18226743723441"
+      },
+      "id": 98443209
     }
   ]
 }
