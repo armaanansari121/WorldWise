@@ -1,12 +1,6 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useState,
-} from "react";
-
-const BASE_URL = "http://localhost:8000";
+import { createContext, useContext, useEffect, useReducer } from "react";
+import supabase from "../config/supabaseClient";
+import { useAuth } from "./AuthContext";
 
 const CitiesContext = createContext();
 
@@ -62,6 +56,9 @@ function reducer(state, action) {
         error: action.payload,
       };
 
+    case "reset":
+      return initialState;
+
     default:
       throw new Error("Unknown action type");
   }
@@ -72,30 +69,44 @@ function CitiesProvider({ children }) {
     reducer,
     initialState
   );
+  const { user, isAuthenticated } = useAuth();
 
-  useEffect(function () {
-    async function getCities() {
-      dispatch({ type: "loading" });
-      try {
-        const res = await fetch(`${BASE_URL}/cities`);
-        const data = await res.json();
-        dispatch({ type: "cities/loaded", payload: data });
-      } catch (err) {
-        dispatch({
-          type: "rejected",
-          payload: "There was an error fetching the cities",
-        });
+  useEffect(
+    function () {
+      async function getCities() {
+        dispatch({ type: "loading" });
+        try {
+          const { data, error } = await supabase
+            .from("Cities")
+            .select(
+              "cityName, country, emoji, dateVisited, id, latitude, longitude, userId"
+            )
+            .eq("userId", user.id);
+          if (error) throw new Error("Failed to fetch data");
+          dispatch({ type: "cities/loaded", payload: data });
+        } catch (err) {
+          console.error(err);
+          dispatch({
+            type: "rejected",
+            payload: "There was an error fetching the cities",
+          });
+        }
       }
-    }
-    getCities();
-  }, []);
+      if (isAuthenticated) getCities();
+      else dispatch({ type: "reset" });
+    },
+    [isAuthenticated]
+  );
 
   async function getCity(id) {
     if (Number(id) === currentCity.id) return;
     dispatch({ type: "loading" });
     try {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await res.json();
+      const { data, error } = await supabase
+        .from("Cities")
+        .select()
+        .eq("id", id)
+        .single();
       dispatch({ type: "city/loaded", payload: data });
     } catch (err) {
       dispatch({
@@ -108,15 +119,25 @@ function CitiesProvider({ children }) {
   async function addCity(newCity) {
     dispatch({ type: "loading" });
     try {
-      const res = await fetch(`${BASE_URL}/cities`, {
-        method: "POST",
-        body: JSON.stringify(newCity),
-        headers: {
-          "Content-Type": "application/json",
-        },
+      const { data, error } = await supabase
+        .from("Cities")
+        .insert([newCity])
+        .select()
+        .single();
+      const newCityData = {
+        cityName: data.cityName,
+        country: data.country,
+        dateVisited: data.dateVisited,
+        emoji: data.emoji,
+        id: data.id,
+        latitude: data.latitude,
+        longitude: data.longitude,
+        userId: data.userId,
+      };
+      dispatch({
+        type: "city/added",
+        payload: newCityData,
       });
-      const data = await res.json();
-      dispatch({ type: "city/added", payload: data });
     } catch (err) {
       dispatch({
         type: "rejected",
@@ -128,14 +149,17 @@ function CitiesProvider({ children }) {
   async function deleteCity(id) {
     dispatch({ type: "loading" });
     try {
-      await fetch(`${BASE_URL}/cities/${id}`, {
-        method: "DELETE",
-      });
+      const { data, error } = await supabase
+        .from("Cities")
+        .delete()
+        .eq("id", id)
+        .select()
+        .single();
       dispatch({ type: "city/deleted", payload: id });
     } catch (err) {
       dispatch({
         type: "rejected",
-        payload: "There was an error adding the city",
+        payload: "There was an error deleting the city",
       });
     }
   }

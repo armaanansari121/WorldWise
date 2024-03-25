@@ -15,7 +15,6 @@ const formatDate = (date) =>
 
 function City() {
   const { id } = useParams();
-  const [searchParams, setSearchParams] = useSearchParams();
   const { currentCity, isLoading, getCity } = useCities();
 
   useEffect(
@@ -25,7 +24,7 @@ function City() {
     [id]
   );
 
-  const { cityName, emoji, date, notes } = currentCity;
+  const { cityName, emoji, dateVisited, notes } = currentCity;
 
   if (isLoading) return <Spinner />;
 
@@ -39,7 +38,7 @@ function City() {
       </div>
       <div className={styles.row}>
         <h6>You went to {cityName} on</h6>
-        <p>{formatDate(date || null)}</p>
+        <p>{formatDate(dateVisited || null)}</p>
       </div>
       {notes && (
         <div className={styles.row}>

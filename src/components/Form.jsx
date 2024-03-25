@@ -11,6 +11,8 @@ import Spinner from "./Spinner";
 import DatePicker from "react-datepicker";
 import { useCities } from "../contexts/CitiesContext";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import supabase from "../config/supabaseClient";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -24,6 +26,7 @@ const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 function Form() {
   const { addCity, isLoading: isUploading } = useCities();
+  const { user } = useAuth();
   const [lat, lng] = useUrlPosition();
   const navigate = useNavigate();
 
@@ -67,6 +70,22 @@ function Form() {
     [lat, lng]
   );
 
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+  //   if (!cityName || !date) return;
+  //   const newCity = {
+  //     cityName,
+  //     country,
+  //     emoji,
+  //     date,
+  //     notes,
+  //     position: { lat, lng },
+  //   };
+  //   await addCity(newCity);
+
+  //   navigate("/app/cities");
+  // }
+
   async function handleSubmit(e) {
     e.preventDefault();
     if (!cityName || !date) return;
@@ -74,21 +93,28 @@ function Form() {
       cityName,
       country,
       emoji,
-      date,
+      dateVisited: date,
       notes,
-      position: { lat, lng },
+      latitude: lat,
+      longitude: lng,
+      userId: user.id,
     };
-    await addCity(newCity);
-
+    addCity(newCity);
     navigate("/app/cities");
   }
 
   if (isLoadingGeocoding) return <Spinner />;
 
   if (!lat || !lng)
-    return <Message message="Start by clicking somewhere on the map" />;
+    return (
+      <Message
+        message="Start by clicking somewhere on the map"
+        type={"message"}
+      />
+    );
 
-  if (geocodingError) return <Message message={geocodingError} />;
+  if (geocodingError)
+    return <Message message={geocodingError} type={"error"} />;
 
   return (
     <form

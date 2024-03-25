@@ -1,18 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import Button from "../components/Button";
-import { useAuth } from "../contexts/FakeAuthContext";
-import styles from "./Login.module.css";
+import { useAuth } from "../contexts/AuthContext";
+import styles from "./Signin.module.css";
 import { useEffect, useState } from "react";
+import Message from "../components/Message";
 
-export default function Login() {
-  const { login, isAuthenticated } = useAuth();
+export default function Signin() {
+  const { signin, isAuthenticated } = useAuth();
   const navigate = useNavigate();
-  console.log(isAuthenticated);
 
-  // PRE-FILL FOR DEV PURPOSES
-  const [email, setEmail] = useState("jack@example.com");
-  const [password, setPassword] = useState("qwerty");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signinError } = useAuth();
+  // console.log(authError);
 
   useEffect(
     function () {
@@ -24,13 +25,15 @@ export default function Login() {
     [isAuthenticated, navigate]
   );
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    if (email && password) login(email, password);
+    if (email && password) {
+      await signin(email, password);
+    }
   }
 
   return (
-    <main className={styles.login}>
+    <main className={styles.signin}>
       <PageNav />
       <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
         <div className={styles.row}>
@@ -53,8 +56,10 @@ export default function Login() {
           />
         </div>
 
+        {signinError ? <Message message={signinError} type={"error"} /> : null}
+
         <div>
-          <Button type="primary">Login</Button>
+          <Button type="primary">Sign-in</Button>
         </div>
       </form>
     </main>

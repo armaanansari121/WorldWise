@@ -1,112 +1,92 @@
 {
   "cities": [
     {
-      "cityName": "Meerut",
+      "cityName": "Bhopal",
       "country": "India",
       "emoji": "🇮🇳",
-      "date": "2024-03-22T09:43:40.218Z",
+      "dateVisited": "2024-03-24T09:54:28.410Z",
       "notes": "",
-      "position": {
-        "lat": "29.022997409327356",
-        "lng": "77.69523201867932"
-      },
-      "id": 98443201
-    },
-    {
-      "cityName": "Nagpur",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2024-03-22T09:38:08.129Z",
-      "notes": "",
-      "position": {
-        "lat": "21.16714026237362",
-        "lng": "79.06704840881548"
-      },
-      "id": 98443200
-    },
-    {
-      "cityName": "Riyadh",
-      "country": "Saudi Arabia",
-      "emoji": "🇸🇦",
-      "date": "2024-03-22T09:44:01.908Z",
-      "notes": "",
-      "position": {
-        "lat": "24.712815163992023",
-        "lng": "46.6757269147764"
-      },
-      "id": 98443202
-    },
-    {
-      "cityName": "Medina",
-      "country": "Saudi Arabia",
-      "emoji": "🇸🇦",
-      "date": "2024-03-22T09:44:39.103Z",
-      "notes": "",
-      "position": {
-        "lat": "24.88781003791885",
-        "lng": "39.13222077384973"
-      },
-      "id": 98443203
-    },
-    {
-      "cityName": "Al Quway‘iyah",
-      "country": "Saudi Arabia",
-      "emoji": "🇸🇦",
-      "date": "2024-03-22T09:47:33.260Z",
-      "notes": "",
-      "position": {
-        "lat": "24.359102476296574",
-        "lng": "45.851358650280986"
-      },
-      "id": 98443204
-    },
-    {
-      "cityName": "Pune",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2024-03-22T11:24:48.044Z",
-      "notes": "",
-      "position": {
-        "lat": "18.545293233152794",
-        "lng": "73.85268333785059"
-      },
-      "id": 98443205
-    },
-    {
-      "cityName": "Delhi",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2024-03-22T11:25:16.351Z",
-      "notes": "",
-      "position": {
-        "lat": "28.612910190449078",
-        "lng": "77.20442503020818"
-      },
-      "id": 98443206
-    },
-    {
-      "cityName": "Dehra Dun",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2024-03-22T11:26:15.162Z",
-      "notes": "",
-      "position": {
-        "lat": "30.335098143147253",
-        "lng": "78.03639162816523"
-      },
-      "id": 98443208
-    },
-    {
-      "cityName": "An Nabhaniyah",
-      "country": "Saudi Arabia",
-      "emoji": "🇸🇦",
-      "date": "2024-03-22T16:35:33.498Z",
-      "notes": "",
-      "position": {
-        "lat": "25.506568109301018",
-        "lng": "42.18226743723441"
-      },
+      "latitude": "23.26753774622779",
+      "longitude": "77.3921718612818",
+      "userId": "152f725b-412f-4847-bbea-2f105bac6e55",
       "id": 98443209
+    },
+    {
+      "cityName": "Zotzenheim",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "dateVisited": "2024-03-24T10:02:05.747Z",
+      "notes": "",
+      "latitude": "49.87816332760412",
+      "longitude": "7.9648934338427235",
+      "userId": "152f725b-412f-4847-bbea-2f105bac6e55",
+      "id": 98443210
+    },
+    {
+      "cityName": "Trebel",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "dateVisited": "2024-03-24T10:02:16.542Z",
+      "notes": "",
+      "latitude": "52.97605007808861",
+      "longitude": "11.279037711138882",
+      "userId": "152f725b-412f-4847-bbea-2f105bac6e55",
+      "id": 98443211
+    },
+    {
+      "cityName": "Ens",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "dateVisited": "2024-03-24T10:13:52.970Z",
+      "notes": "",
+      "latitude": "42.79706263291292",
+      "longitude": "0.3342527799766604",
+      "userId": "152f725b-412f-4847-bbea-2f105bac6e55",
+      "id": 98443212
+    },
+    {
+      "cityName": "Hilter",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "dateVisited": "2024-03-24T10:17:34.600Z",
+      "notes": "",
+      "latitude": "52.143510039408625",
+      "longitude": "8.140815984940508",
+      "userId": "3c567cd2-e866-4365-95fd-d5726858e57d",
+      "id": 98443213
+    },
+    {
+      "cityName": "Jamne",
+      "country": "Czechia",
+      "emoji": "🇨🇿",
+      "dateVisited": "2024-03-24T10:17:37.246Z",
+      "notes": "",
+      "latitude": "49.44282792756695",
+      "longitude": "15.738497822204407",
+      "userId": "3c567cd2-e866-4365-95fd-d5726858e57d",
+      "id": 98443214
+    },
+    {
+      "cityName": "Dusnok",
+      "country": "Hungary",
+      "emoji": "🇭🇺",
+      "dateVisited": "2024-03-24T10:17:39.049Z",
+      "notes": "",
+      "latitude": "46.36692876866201",
+      "longitude": "18.925416110315528",
+      "userId": "3c567cd2-e866-4365-95fd-d5726858e57d",
+      "id": 98443215
+    },
+    {
+      "cityName": "Sandal",
+      "country": "Slovakia",
+      "emoji": "🇸🇰",
+      "dateVisited": "2024-03-24T10:17:40.730Z",
+      "notes": "",
+      "latitude": "49.211712073073265",
+      "longitude": "21.605673932159416",
+      "userId": "3c567cd2-e866-4365-95fd-d5726858e57d",
+      "id": 98443216
     }
   ]
 }

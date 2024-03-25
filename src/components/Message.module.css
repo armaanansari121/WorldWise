@@ -5,3 +5,12 @@
   margin: 2rem auto;
   font-weight: 600;
 }
+
+.error {
+  text-align: center;
+  font-size: 1.8rem;
+  width: 80%;
+  margin: 2rem auto;
+  font-weight: 600;
+  color: red;
+}
